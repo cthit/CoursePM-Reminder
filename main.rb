@@ -23,7 +23,7 @@ PARTS = {
 }
 
 def get_subject()
-	"TESTMAIL: Påminnelse om kursPM"
+	"Påminnelse om kursPM"
 end
 
 def get_intro(examinator_first_name, course_code)
@@ -31,7 +31,7 @@ def get_intro(examinator_first_name, course_code)
 
 Vi hoppas att allting är bra och att du ser fram emot din kurs kommande läsperiod.
 
-Vi skriver för att påminna om att det idag är två veckor till kursstart i kursen #{course_code}, och för att det enligt Chalmers föreskrifter för examination skall finnas ett komplett kurs-pm tillgängligt på kurshemsidan två veckor innan kursstart. Du kan läsa föreskrifterna här: #{TENTA_LINK} \n
+Vi skriver för det snart är kursstart i kursen #{course_code}, och för att det enligt Chalmers föreskrifter för examination skall finnas ett komplett kurs-pm tillgängligt på kurshemsidan två veckor innan kursstart. Du kan läsa föreskrifterna här: #{TENTA_LINK} \n
 
 Vi kan se att det saknas information om en del saker listat nedan.
 "
@@ -129,7 +129,7 @@ csv.each do |row|
 	course_code = row['kurs']
 	examinator_first_name = row['Kursansvarig']
 	examinator_email = row['email (examinator)']
-	send_email('dr.horv@gmail.com', examinator_first_name, course_code, missing_parts)
+	send_email(examinator_email, examinator_first_name, course_code, missing_parts)
 end
 
 
